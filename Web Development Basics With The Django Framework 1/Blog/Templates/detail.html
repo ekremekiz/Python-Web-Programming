@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}
+
+<div class="row">
+                <!-- Post content-->
+                <div class="col-lg-8">
+                    <!-- Title-->
+                    <h3 class="mt-4">{{article.title}}</h3>
+                    <!-- Author-->
+                    <p class="lead">
+                        by
+                        {{article.author.username}}
+                    </p>
+                    <hr />
+                    <!-- Date and time-->
+                    <p>{{article.created_date}}</p>
+                    <hr />
+                    <!-- Preview image -->
+                    <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="..." />
+                    <hr />
+                    <!-- Post content-->
+                    <p class="lead">
+                        {{article.content}}
+                    </p>
+                    <hr />
+
+                </div>
+
+
+
+                </div>
+            </div>
+
+{% endblock body %}
