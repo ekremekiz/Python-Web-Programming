@@ -19,11 +19,13 @@
                     <p>{{article.created_date}}</p>
                     <hr />
                     <!-- Preview image -->
-                    <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="..." />
+                    {% if article.article_image %}
+                    <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" />
+                    {% endif %}
                     <hr />
                     <!-- Post content-->
                     <p class="lead">
-                        {{article.content}}
+                        {{article.content | safe}}
                     </p>
                     <hr />
 
